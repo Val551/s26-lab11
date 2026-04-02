@@ -25,4 +25,10 @@ public class Board {
         newCells[y * 3 + x] = player;
         return new Board(newCells);
     }
+
+    public Board undoCell(int x, int y) {
+        Player[] newCells = Arrays.copyOf(this.cells, this.cells.length);
+        newCells[y * 3 + x] = null;
+        return new Board(newCells);
+    }
 }
